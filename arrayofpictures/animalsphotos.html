@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <style>
+    img {
+      width: 50%;
+    }
+    </style>
+    <link rel="stylesheet" type="text/css" href="navbar.css">
+  </head>
+
+  <body>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="birthday.html">Birthday</a></li>
+      <li><a href="music.html">Music</a></li>
+      <li><a href="animals.html">Animals</a></li>
+      <li><a href="games.html">Games</a></li>
+      <li><a href="argentina.html">Argentina</a></li>
+      <li><a class="active" href="animalsphotos.html">Pics</a></li>
+      <li><a href="geolocation.html">Geolocation</a></li>
+    </ul>
+    <h1>Click on the photo to see a random image</h1>
+    <img src="http://barbara-5.info/wp-content/uploads/2016-04-23_10-45-21-300x200.jpg" alt='image' id="changeablePic" onClick="change();">
+
+    <script type="text/javascript">
+      var animalPics = [
+      "https://cdn.tn.com.ar/sites/default/files/styles/1366x765/public/2018/07/22/macri_excomunion.jpg","https://i1.wp.com/noticieros.televisa.com/wp-content/uploads/2018/04/fotos-de-aguilas-calvas.jpg?fit=900%2C501&quality=95&ssl=1","https://www.aspca.org/sites/default/files/blog_hog-himp_022318_main.jpg","https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Llama_lying_down.jpg/1200px-Llama_lying_down.jpg","http://a57.foxnews.com/images.foxnews.com/content/fox-news/tech/2018/03/01/lion-with-luscious-head-hair-becomes-viral-sensation/_jcr_content/par/featured_image/media-0.img.jpg/0/0/1519920904249.jpg?ve=1","teo2.jpg","https://cdn.images.express.co.uk/img/dynamic/128/590x/Eastern-brown-snake-899415.jpg","https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Cheetah_%28Acinonyx_jubatus%29_female_2.jpg/1200px-Cheetah_%28Acinonyx_jubatus%29_female_2.jpg","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRleg0PT00gz7Qd_huz8lPXA-mGRlJqNQe1nTS6wbIIWyH-tw8DHw"];
+
+      function change() {
+        var image = document.getElementById('changeablePic');
+        var animalPic = getRandomInt(0, 10)
+        image.src = animalPics[animalPic]
+      }
+
+      function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min;
+        //The maximum is exclusive and the minimum is inclusive
+      }
+    </script>
+  </body>
+</html>

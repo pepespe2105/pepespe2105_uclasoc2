@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <style>
+    img {
+      width: 50%;
+    }
+    </style>
+  </head>
+
+  <body>
+    <h1>Click on the photo to see a random image</h1>
+    <img src="http://barbara-5.info/wp-content/uploads/2016-04-23_10-45-21-300x200.jpg" alt='image' id="changeablePic" onClick="change();">
+
+    <script type="text/javascript">
+      var animalPics = ["https://cdn.tn.com.ar/sites/default/files/styles/1366x765/public/2018/07/22/macri_excomunion.jpg","https://i1.wp.com/noticieros.televisa.com/wp-content/uploads/2018/04/fotos-de-aguilas-calvas.jpg?fit=900%2C501&quality=95&ssl=1","https://www.aspca.org/sites/default/files/blog_hog-himp_022318_main.jpg","https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Llama_lying_down.jpg/1200px-Llama_lying_down.jpg","http://a57.foxnews.com/images.foxnews.com/content/fox-news/tech/2018/03/01/lion-with-luscious-head-hair-becomes-viral-sensation/_jcr_content/par/featured_image/media-0.img.jpg/0/0/1519920904249.jpg?ve=1","teo2.jpg","https://i1.wp.com/media.premiumtimesng.com/wp-content/files/2015/10/snake-medicine.jpg?fit=600%2C450&ssl=1","https://kids.nationalgeographic.com/content/dam/kids/photos/other/books/h2h-cheetah.ngsversion.1490278431220.jpg","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTufuSBxO887prkvE51wqgGMX_MK3LZzAUajuco6XM7gcFodJZyg"];
+
+      function change() {
+        var image = document.getElementById('changeablePic');
+        var animalPic = getRandomInt(0, 10)
+        image.src = animalPics[animalPic]
+      }
+
+      function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min;
+        //The maximum is exclusive and the minimum is inclusive
+      }
+    </script>
+  </body>
+</html>
